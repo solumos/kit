@@ -17,7 +17,7 @@ const jsdomPatch = {
 
       contents = contents.replace(
         'const syncWorkerFile = require.resolve ? require.resolve("./xhr-sync-worker.js") : null;',
-        `const syncWorkerFile = "${require.resolve('jsdom/lib/jsdom/living/xhr/xhr-sync-worker.js')}";`,
+        `const syncWorkerFile = null;`,
       );
 
       return { contents, loader: 'js' };
