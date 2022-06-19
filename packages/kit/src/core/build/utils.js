@@ -61,12 +61,13 @@ export function find_deps(file, manifest, js, css) {
  */
 export const get_default_config = function ({ client_out_dir, config, input, output_dir, ssr }) {
 	return {
+		appType: 'custom',
 		base: assets_base(config.kit),
 		build: {
 			cssCodeSplit: true,
 			manifest: true,
 			outDir: ssr ? `${output_dir}/server` : `${client_out_dir}/immutable`,
-			polyfillDynamicImport: false,
+			polyfillModulePreload: false,
 			rollupOptions: {
 				input,
 				output: {
