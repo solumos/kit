@@ -12,7 +12,7 @@ const require = createRequire(import.meta.url);
 const jsdomPatch = {
   name: 'jsdom-patch',
   setup(build) {
-    build.onLoad({ filter: /jsdom\/living\/xhr\/XMLHttpRequest-impl\.js$/ }, async args => {
+    build.onLoad({ filter: /jsdom\/living\/xmlhttprequest.js$/ }, async args => {
       let contents = await fs.promises.readFile(args.path, 'utf8');
 
       contents = contents.replace(
